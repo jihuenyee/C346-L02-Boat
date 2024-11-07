@@ -1,12 +1,26 @@
 import React from 'react';
-import { Text, ScrollView, StatusBar } from 'react-native';
+import {Text, ScrollView, StatusBar, StyleSheet} from 'react-native';
 import Boat from './components/Boat.js';
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+    },
+    header: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 10,
+        backgroundColor: 'lightgray',
+        padding: 10,
+    },
+});
 
 const App = () => {
   return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
             <StatusBar hidden={true}/>
-            <Text>GetABoat - For Sale</Text>
+            <Text style={styles.header}>GetABoat - For Sale</Text>
             <Boat icon_name="sailboat" name="Sea Ray 500 Sundancer" desc="Contoured lines and dramatic styling reveal a refined and powerful presence that will take your breath away." pic={require("./img/sea_ray.jpg")}/>
             <Boat icon_name="sailboat" name="Four Winns Horizon 180" desc="A sporty look and refined details truly set the Horizon 180 above all others." pic={require("./img/four_winns.jpg")}/>
             <Boat icon_name="sailboat" name="Flipper 640 ST" desc="A modern take on the classic, traditional hardtop and perfect for a family picnic." pic={require("./img/flipper.jpg")}/>
